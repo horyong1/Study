@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class test1430 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+	}
+
+}

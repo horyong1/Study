@@ -1,0 +1,50 @@
+<%@ page import="utils.*" %>
+<%@ page import="java.io.*" %>
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    
+    
+ <%
+ String saveDirectory = application.getRealPath("/Uploads");
+ String saveFilename = request.getParameter("sName");
+ String originalFilename = request.getParameter("oName");
+ 
+ try{
+	 // 파일을 찾아 입력 스트림 생성
+	 File file = new File(saveDirectory, saveFilename);
+	 InputStream inStream = new fileInputStream(file);
+	 
+	 // 한글 파일명 깨짐 방지
+	 String client = request.getHeader("User-Agent");
+	 if(client.indexOf("WOW64") == -1){
+		 originalFilename = new String(originalFilename.getBytes("UTF-8"),"ISO-8859-1");
+	 }else{
+		 originalFilename = new String(originalFilename.getBytes("KSC5601"),"ISO-8859-1");
+		 
+	 }
+	 response.reset();
+	 response.setContentType("application/octet-stream");
+	 response.setHeader("Content-Disposition",
+			 attachment; filename=\"" +originalFilemane +"\"");
+	 
+ }catch(FileNotFoundException e){
+ 	
+ }catch(Exception e){
+ }
+	 
+ }
+ %>   
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

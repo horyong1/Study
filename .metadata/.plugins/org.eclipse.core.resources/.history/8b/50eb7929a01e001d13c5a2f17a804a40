@@ -1,0 +1,37 @@
+package model2.mvcboard;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/ListController")
+public class ListController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+		MVCBoardDAO dao = new MVCBoardDAO();
+		
+		Map<String, Object>map = new HashMap<String, Object>();
+		
+		String searchField = request.getParameter("searchField");
+		String searchWord = request.getParameter("searchWord");
+		if(searchWord != null) {
+			// 쿼리스트링으로 전달받으 매개변수 중 검색어가 있다면 map에 저장
+			map.put("searchField", searchField);
+			map.put("searchWord", searchWord);
+			
+		}
+	}
+
+}

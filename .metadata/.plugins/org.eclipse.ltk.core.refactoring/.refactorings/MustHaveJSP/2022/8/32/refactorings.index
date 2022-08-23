@@ -1,0 +1,14 @@
+1659407627592	Move 'Import.jsp' to '01DrectiveScript'
+1659407826117	Move '01DrectiveScript' to 'webapp'
+1659408359400	Copy file
+1659408366582	Rename resource 'isErrorPage.jsp'
+1659420631891	Move 'RequestMain.jsp' to '02ImplocotObject'
+1659426705419	Rename resource '02ImplocotObject'
+1659427577186	Rename resource 'ResponeseMain.jsp'
+1659496202400	Rename resource 'Pageinclude.jsp'
+1659575425311	Rename resource 'PopupMain.jsp'
+1659579341223	Rename resource 'PopupMain_0.1.jsp'
+1659582123808	Copy package
+1659582129479	Delete element
+1659663349176	Delete element
+1659670530332	Rename resource '06SessionMain'

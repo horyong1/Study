@@ -1,0 +1,61 @@
+package model2.mvcboard;
+
+import java.io.IOException;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+
+import utils.JSFunction;
+
+@WebServlet("/WriteController")
+public class WriteController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("/14MVCBoard/write.jsp").forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		// 1. 파일 업로드 처리 =========================
+		// 업로드 디렉터리의 물리적 경로 확인
+		String saveDirectory =request.getServletContext().getRealPath("/Uploads");
+		
+		//초기화 매개변수로 설정한 첨부파일 최대 용량 확인
+		ServletContext application = getServletContext();
+		int maxPostSize = Integer.parseInt(application.getInitParameter("maxPostSize"));
+		
+		//파일 업로드
+		MultipartRequest mr = FileUtil.uploadFile(request, saveDirectory, maxPostSize);
+		
+		if( mr == null ) {
+			//파일 업로드 실패
+			JSFunction.alertLocation(response, "첨부 파일이 제한 용량을 초과합니다.", 
+					"../mvcboard/write.do");
+			return;
+		}
+		
+		// 2. 파일 업로드 외 처리===================================
+		// 폼값을 DTO에 저장
+		MVCBoardDTO dto = new MVCBoardDTO();
+		dto.setName(mr.getParameter("name"));
+		dto.setTitle(mr.getParameter("title"));
+		dto.setContent(mr.getParameter("content"));
+		dto.setPass(mr.getParameter("pass"));
+	}
+
+	
+
+}
