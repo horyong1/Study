@@ -1,0 +1,7 @@
+package org.zero.mapper;
+
+public class TimeMapper {
+	
+	@Select("SELECT sysdate FROM dual")
+	public String getTime();
+}
