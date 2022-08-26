@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="jex00"/>
+<aop-project name="jex01"/>
 <aop-project name="ex00"/>
 <aop-project name="ex01"/>
+<aop-project name="ex02"/>
 </aop-reference-model>
