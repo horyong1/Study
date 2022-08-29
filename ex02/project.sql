@@ -15,4 +15,8 @@ PRIMARY KEY (bno);
 INSERT INTO tbl_board(bno, title, content, writer)
 values(seq_board.nextval, '테스트 제목', '테스트 내용', 'user00');
 
-SELECT * FROM  tbl_board;
+SELECT * FROM  tbl_board
+ORDER BY 1;
+
+COMMIT;
+
