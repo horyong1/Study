@@ -13,59 +13,57 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-@ContextConfiguration(classes={org.zerock.config.RootConfig.class})
+@ContextConfiguration(classes = {org.zerock.config.RootConfig.class})
 @Log4j
 public class BoardServiceTests {
-
 	@Setter(onMethod_ = {@Autowired})
 	private BoardService service;
 	
 	@Test
 	public void testExist() {
-		
 		log.info(service);
 		assertNotNull(service);
 	}
 	
+	//µî·Ï ÀÛ¾÷
 	@Test
 	public void testRegister() {
-		
 		BoardVO board = new BoardVO();
-		board.setTitle("ìƒˆë¡œ ì‘ì„±í•˜ëŠ” ê¸€");
-		board.setContent("ìƒˆë¡œ ì‘ì„±í•˜ëŠ” ë‚´ìš©");
+		board.setTitle("»õ·Î ÀÛ¼ºÇÏ´Â ±Û");
+		board.setContent("»õ·Î ÀÛ¼ºÇÏ´Â ³»¿ë");
 		board.setWriter("newbie");
 		
 		service.register(board);
-		log.info("ìƒì„±ëœ ê²Œì‹œë¬¼ì˜ ë²ˆí˜¸ : " + board.getBno());
+		
+		log.info("»ı¼ºµÈ °Ô½Ã¹°ÀÇ ¹øÈ£ : " + board.getBno());
 	}
-	
+		
+	//¸ñ·Ï(¸®½ºÆ®) ÀÛ¾÷
 	@Test
 	public void testGetList() {
 		service.getList().forEach(board -> log.info(board));
 	}
 	
+	//Á¶È¸ ÀÛ¾÷
 	@Test
 	public void testGet() {
-		
 		log.info(service.get(1L));
 	}
 	
 	@Test
 	public void testDelete() {
-		// ê²Œì‹œë¬¼ ë²ˆí˜¸ì˜ ì¡´ì¬ ì—¬ë¶€ í™•ì¸ í›„ í…ŒìŠ¤íŠ¸
-		log.info("REMOVE RESULT: " + service.remove(2L));
+		//°Ô½Ã¹° ¹øÈ£ÀÇ Á¸Àç ¿©ºÎ¸¦ È®ÀÎÇÏ°í Å×½ºÆ® ÇÒ °Í
+		log.info("REMOVE RESULT : " + service.remove(2L));
 	}
 	
 	@Test
 	public void testUpdate() {
-		
 		BoardVO board = service.get(1L);
-		
 		if(board == null) {
 			return;
 		}
-		board.setTitle("ì œëª© ìˆ˜ì •í•©ë‹ˆë‹¤.");
-		log.info("MODIFY RESULT: " + service.modify(board));
+		
+		board.setTitle("Á¦¸ñ ¼öÁ¤ÇÕ´Ï´Ù.");
+		log.info("MODIFY RESULT : " + service.modify(board));
 	}
 }

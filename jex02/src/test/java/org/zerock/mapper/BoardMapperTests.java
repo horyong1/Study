@@ -11,12 +11,9 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-//java Config
-@ContextConfiguration(classes = {org.zerock.config.RootConfig.class} )
+@ContextConfiguration(classes = {org.zerock.config.RootConfig.class})
 @Log4j
 public class BoardMapperTests {
-	
 	@Setter(onMethod_ = @Autowired)
 	private BoardMapper mapper;
 	
@@ -25,56 +22,53 @@ public class BoardMapperTests {
 		mapper.getList().forEach(board -> log.info(board));
 	}
 	
-//	@Test
-//	public void testInsert() {
-//		BoardVO board = new BoardVO();
-//		board.setTitle("ìƒˆë¡œ ì‘ì„±í•˜ëŠ” ê¸€");
-//		board.setContent("ìƒˆë¡œ ì‘ì„± í•˜ëŠ” ë‚´ìš©");
-//		board.setWriter("newbie");
-//		
-//		mapper.insert(board);
-//		
-//		log.info(board);
-//	}
-//
-//	@Test
-//	public void testInsertSelectKey() {
-//		BoardVO board = new BoardVO();
-//		board.setTitle("ìƒˆë¡œ ì‘ì„±í•˜ëŠ” ê¸€ select key");
-//		board.setContent("ìƒˆë¡œ ì‘ì„± í•˜ëŠ” ë‚´ìš© select key");
-//		board.setWriter("newbie");
-//		
-//		mapper.insertSelectKey(board);
-//		
-//		log.info(board);
-//	}
-	
-//	@Test
-//	public void testRead() {
-//		
-//		//ì¡´ì¬í•˜ëŠ” ê²Œì‹œë¬¼ ë²ˆí˜¸ë¡œ í…ŒìŠ¤íŠ¸
-//		BoardVO board = mapper.read(5L);
-//		
-//		log.info(board);
-//	}
-//	
-//	@Test
-//	public void testDelete() {
-//		
-//		log.info("DELETE COUNT: " + mapper.delete(4L));
-//	}
-	
-	@Test 
-	public void testUpdate() {
-		
+	@Test
+	public void testInsert() {
 		BoardVO board = new BoardVO();
-		//ì‹¤í–‰ì „ ì¡´ì¬í•˜ëŠ” ë²ˆí˜¸ì¸ì§€ í™•ì¸í•  ê²ƒ
+		board.setTitle("»õ·Î ÀÛ¼ºÇÏ´Â ±Û");
+		board.setContent("»õ·Î ÀÛ¼ºÇÏ´Â ³»¿ë");
+		board.setWriter("newbie");
+		
+		mapper.insert(board);
+		
+		log.info(board);
+	}
+	
+	@Test
+	public void testInsertSelectKey() {
+		BoardVO board = new BoardVO();
+		board.setTitle("»õ·Î ÀÛ¼ºÇÏ´Â ±Û select key");
+		board.setContent("»õ·Î ÀÛ¼ºÇÏ´Â ³»¿ë select key");
+		board.setWriter("newBie");
+		
+		mapper.insertSelectKey(board);
+		
+		log.info(board);
+	}
+	
+	@Test
+	public void testRead() {
+		//Á¸ÀçÇÏ´Â °Ô½Ã¹° ¹øÈ£·Î Å×½ºÆ®
+		BoardVO board = mapper.read(5L);
+		
+		log.info(board);
+	}
+	
+	@Test
+	public void testDelete() {
+		log.info("DELETE COUNT: " + mapper.delete(3L));
+	}
+	
+	@Test
+	public void testUpdate() {
+		BoardVO board = new BoardVO();
+		//½ÇÇà Àü Á¸ÀçÇÏ´Â ¹øÈ£ÀÎÁö È®ÀÎÇÒ °Í
 		board.setBno(5L);
-		board.setTitle("ìˆ˜ì •ëœ ì œëª©");
-		board.setContent("ìˆ˜ì •ëœ ë‚´ìš©");
+		board.setTitle("¼öÁ¤µÈ Á¦¸ñ");
+		board.setContent("¼öÁ¤µÈ ³»¿ë");
 		board.setWriter("user00");
 		
 		int count = mapper.update(board);
-		log.info("UPDATE COUNT: " + count );
+		log.info("UPDATE COUNT: " + count);
 	}
 }

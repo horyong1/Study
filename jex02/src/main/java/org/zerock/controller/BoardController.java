@@ -34,7 +34,7 @@ public class BoardController {
 
 	@PostMapping("/register")
 	public String register(BoardVO board, RedirectAttributes rttr) {
-		log.info("register : " + board);
+		log.info("register: " + board);
 
 		service.register(board);
 
