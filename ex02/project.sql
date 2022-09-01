@@ -1,6 +1,6 @@
-CREATE SEQUENCE seq_board;
+CREATE SEQUENCE seq_board
 
-CREATE TABLE tbl_board(
+CREATE TABLE tbl_board (
 	bno number(10,0),
 	title varchar2(200) NOT NULL,
 	content varchar2(2000) NOT NULL,
@@ -10,13 +10,15 @@ CREATE TABLE tbl_board(
 );
 
 ALTER TABLE tbl_board ADD CONSTRAINT pk_board
-PRIMARY KEY (bno);
+PRIMARY key(bno);
 
-INSERT INTO tbl_board(bno, title, content, writer)
+INSERT INTO TBL_BOARD (bno, title, content, WRITER)
 values(seq_board.nextval, '테스트 제목', '테스트 내용', 'user00');
 
-SELECT * FROM  tbl_board
-ORDER BY 1;
+SELECT * FROM TBL_BOARD
 
-COMMIT;
+DELETE FROM TBL_BOARD WHERE BNO>50
+
+
+
 

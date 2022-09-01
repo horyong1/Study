@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -11,8 +13,8 @@
 <title>SB Admin 2 - Tables</title>
 
 <!-- Custom fonts for this template -->
-<link href="/resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
+<link href="/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
@@ -24,6 +26,12 @@
 <link href="/resources/vendor/datatables/dataTables.bootstrap4.min.css"
 	rel="stylesheet">
 
+<style>
+	.row {
+		margin-right: 0;
+		margin-left: 0;
+	}
+</style>
 </head>
 
 <body id="page-top">
@@ -263,7 +271,7 @@
 								<h6 class="dropdown-header">Message Center</h6>
 								<a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
-										<img class="rounded-circle" src="img/undraw_profile_1.svg"
+										<img class="rounded-circle" src="/resources/img/undraw_profile_1.svg"
 											alt="...">
 										<div class="status-indicator bg-success"></div>
 									</div>
@@ -274,7 +282,7 @@
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
-										<img class="rounded-circle" src="img/undraw_profile_2.svg"
+										<img class="rounded-circle" src="/resources/img/undraw_profile_2.svg"
 											alt="...">
 										<div class="status-indicator"></div>
 									</div>
@@ -285,7 +293,7 @@
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
-										<img class="rounded-circle" src="img/undraw_profile_3.svg"
+										<img class="rounded-circle" src="/resources/img/undraw_profile_3.svg"
 											alt="...">
 										<div class="status-indicator bg-warning"></div>
 									</div>
@@ -320,7 +328,7 @@
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas
 									McGee</span> <img class="img-profile rounded-circle"
-								src="img/undraw_profile.svg">
+								src="/resources/img/undraw_profile.svg">
 						</a> <!-- Dropdown - User Information -->
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -346,3 +354,5 @@
 
 				</nav>
 				<!-- End of Topbar -->
+				
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
