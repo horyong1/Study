@@ -14,7 +14,7 @@
 		<h1>게시글 리스트</h1>
 		<table class="list">
 			<tr>
-				<td colspan="5" style="board: width; text-align: right"><a
+				<td colspan="5" style="border: white; text-align: right"><a
 					href="BoardServlet?command=board_write_form">게시글 등록</a></td>
 			</tr>
 			<tr>
@@ -26,12 +26,12 @@
 			</tr>
 			<c:forEach var="board" items="${boardList}">
 				<tr class="record">
-					<td>${board.num }</td>
-					<td><a href="BoardServlet?command=board_view&num=${board.num}">${board.title }</a>
+					<td>${board.num}</td>
+					<td><a href="BoardServlet?command=board_view&num=${board.num}">${board.title}</a>
 					</td>
-					<td>${board.name }</td>
-					<td><fmt:formatDate value="${board.writedate }" /></td>
-					<td>${board.readcount }</td>
+					<td>${board.name}</td>
+					<td><fmt:formatDate value="${board.writedate}"/></td>
+					<td>${board.readcount}</td>
 				</tr>
 			</c:forEach>
 		</table>

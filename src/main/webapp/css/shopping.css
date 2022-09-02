@@ -1,45 +1,44 @@
 @charset "UTF-8";
 
-#wrap{
+#wrap {
 	width: 971px;
-	margin:0;
-	margin-left:auto;
-	margin-right:auto;
-	
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-h1{
-	color:green;	
+h1 {
+	color: green;
 }
 
-table{
-width: 100%;
+table {
+	width: 100%;
 	border-collapse: collapse;
 	font-size: 12px;
 	line-height: 24px;
 }
-table td, th{
+
+table td, th {
 	border: #d3d3d3 solid 1px;
 	padding: 5px;
-	
 }
+
 th {
 	background: yellowgreen;
 	width: 120px;
 }
 
-img{
+img {
 	width: 220px;
 	height: 300px;
 }
 
-a{
-	text-decoration:none;
+a {
+	text-decoration: none;
 	color: black;
-	
 }
 
-a:HOVER{
+a:HOVER {
 	text-decoration: underline;
 	color: green;
 }
