@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        idTag = document.getElementById("id");
+        idTag.parentNode.removeChild(idTag); //부모 밑에 있는 자식 테그 지우기
+
+        pwdTag = document.getElementById("pwd"); // getElementById로 pwd 아이디값이 있는 td를 구하고
+        pwdTag.style.border = "3px dotted blue"; //스타일 적용 하기
+        pwdTag.style.fontSize = "20px";
+        // pwdTag.style.borderStyle = "dashed";
+        pwdTag.style["border-style"] = "solid";
+      };
+    </script>
+  </head>
+  <body>
+    <table border="1" style="width: 300px; height: 100px">
+      <tr>
+        <td id="id">ID</td>
+      </tr>
+      <tr>
+        <td id="pwd">PASSWORD</td>
+      </tr>
+    </table>
+  </body>
+</html>

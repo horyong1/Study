@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //선언적 함수
+      function test_function() {
+        alert("call~~~~~~~");
+      }
+
+      function test_function(a) {
+        alert(`a : ${a}`);
+      }
+      // test_function(10);
+
+      //익명 함수
+      // let f 가 function func()을 갖게 되면서 f의 타입은 function으로 변경(fucn(); ->X , f(); ->O)
+      let f = function func() {
+        alert("func()......출력....");
+      };
+      // f();
+
+      //함수 우선순위 익명함수가 높음
+      var aaa = function () {
+        alert("익명함수 aaa().....");
+      };
+
+      function aaa() {
+        alert("선언적 함수 aaa().....");
+      }
+      /**
+       * call : function 사용
+       */
+      function callFunc(call) {
+        call();
+      }
+
+      //callFunc();
+      callFunc(function () {
+        alert("good!!~~~~~~~~~~~~~~~~~");
+      });
+
+      callFunc(prompt);
+      callFunc(alert);
+      callFunc(aaa);
+
+      (function () {
+        alert("일회용 함수 실행");
+      })();
+
+      //aaa();
+    </script>
+  </head>
+  <body></body>
+</html>

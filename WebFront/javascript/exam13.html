@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let money = "1250.223원";
+      document.write("Number() : " + Number(money) + "<br>");
+      document.write("parseInt() : " + parseInt(money) + "<br>");
+      document.write("parseFloat() : " + parseFloat(money) + "<br>");
+
+      let command = "let num = 10;";
+      command += "let num2 = 20;";
+      command += "alert(`${num} + ${num2} = ${num+num2}`);";
+      command += 'let array = [10,"Hello",12.34];';
+
+      document.write(command + "<br>");
+      eval(command);
+    </script>
+  </head>
+  <body></body>
+</html>

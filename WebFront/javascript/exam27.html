@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      hr {
+        width: 240px;
+        text-align: left;
+        margin-left: 0px;
+      }
+    </style>
+    <script>
+      function selectAll() {
+        let hobbies = document.inputForm.hobby;
+        console.log(hobbies);
+
+        for (let i = 0; i < hobbies.length; i++) {
+          hobbies[i].checked = true;
+        }
+      }
+
+      function deSelectAll() {
+        let hobbies = document.inputForm.hobby;
+        console.log(hobbies);
+
+        for (let i = 0; i < hobbies.length; i++) {
+          hobbies[i].checked = false;
+        }
+      }
+      //익명 함수로 만들어도 됨
+      function showInfo() {
+        let hobbies = document.inputForm.hobby;
+        console.log(hobbies);
+        let msg = "";
+        for (let i = 0; i < hobbies.length; i++) {
+          let ck = hobbies[i].checked;
+          if (ck === true) {
+            msg += hobbies[i].value + " ";
+          }
+        }
+        if (msg) {
+          alert(msg);
+        }
+      }
+
+      function toggle(checked) {
+        let hobbies = document.inputForm.hobby;
+        for (let i = 0; i < hobbies.length; i++) {
+          hobbies[i].checked = checked;
+        }
+      }
+
+      function toggle2() {
+        let hobbies = document.inputForm.hobby;
+        let ck = false;
+
+        for (let i = 0; i < hobbies.length; i++) {
+          if (!hobbies[i].checked) {
+            ck = true;
+            break;
+          }
+        }
+
+        for (let i in hobbies) {
+          hobbies[i].checked = ck;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- form 태그만 name으로 검색가능 document.inputForm.hobby -->
+    <form name="inputForm">
+      취미를 선택 하세요(중복가능) <br />
+      <hr />
+      <input type="checkbox" name="hobby" value="music" /> 음악감상 <br />
+      <input type="checkbox" name="hobby" value="movie" /> 영화감상 <br />
+      <input type="checkbox" name="hobby" value="mountain" /> 등산 <br />
+      <input type="checkbox" name="hobby" value="game" /> 게임 <br />
+      <hr />
+      <input type="button" value="전체선택/해제" onclick="toggle2()" />
+
+      <!-- <input type="button" value="전체선택" onclick="toggle(true)" />
+      <input type="button" value="전체해제" onclick="toggle(false)" /> -->
+      <!-- 
+      <input type="button" value="전체 선택" onclick="selectAll()" />
+      <input type="button" value="전체 취소" onclick="deSelectAll()" /> -->
+
+      <input type="button" value="결과보기" onclick="showInfo()" />
+
+      <!-- <input type="submit" value="전송" /> -->
+    </form>
+  </body>
+</html>

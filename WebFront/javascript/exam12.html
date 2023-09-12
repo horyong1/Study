@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /**
+       * 1. 타이머
+       *  setInterval(함수, ms)
+       *  setTimeout(함수, ms)
+       *  clearInterval()
+       *  clearTimeout()
+       * 2. 코드 실행 함수
+       * eval()
+       * 3. 숫자변환함수
+       * parseInt()
+       * parseFloat()
+       */
+
+      //   setTimeout(function () {
+      //     alert("1초가 경과 되었습니다.");
+      //   }, 1000); //1초뒤에 실행
+      let id = setInterval(function () {
+        document.write(`현재 시간 : ${new Date()}<br>`);
+      }, 1000); //1초 간격으로 시간 데이터 출력
+
+      setTimeout(function () {
+        clearInterval(id);
+      }, 10000); //10초뒤에 setInterval() 멈춤
+    </script>
+  </head>
+  <body></body>
+</html>

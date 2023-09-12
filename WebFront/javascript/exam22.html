@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let hTag = document.createElement("h1");
+        let text = document.createTextNode("Hello World");
+        hTag.appendChild(text);
+        console.log(hTag);
+        document.body.appendChild(hTag);
+
+        let imgTag = document.createElement("img");
+        imgTag.src =
+          "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png";
+
+        let aTag = document.createElement("a");
+        aTag.href = "http://www.daum.net";
+        aTag.setAttribute("target", "_blank");
+        //aTag.target='_blank';
+        aTag.appendChild(imgTag);
+        document.body.appendChild(aTag);
+      };
+    </script>
+  </head>
+  <body>
+    <!-- <h1>Hello World!!!!!!!!!!!!!!!!</h1> -->
+  </body>
+</html>

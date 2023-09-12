@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: red;
+        background-image: url(../image/dog001.jpg);
+        background-repeat: repeat-y;
+        background-position: 500px 100px;
+      }
+      div.style01 {
+        position: absolute;
+        top: 150px;
+        width: 800px;
+        padding: 20px;
+        background-color: orange;
+        background-image: url(../image/dog002.jpg);
+        background-repeat: no-repeat;
+        background-size: 100px;
+        background-position: right bottom;
+        background-origin: border-box;
+        border: 10px dotted skyblue;
+      }
+      .style02 {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: lightgoldenrodyellow;
+      }
+      img {
+        border: 5px solid aqua;
+      }
+      img[src^="../image"] {
+        /*이미지 경로가 image 로 시작 하면 적용*/
+        border-color: greenyellow;
+      }
+      img[src$="jpg"] {
+        /*이미지가 jpg로 시작 하면 적용*/
+        border-color: slateblue;
+      }
+      img[src*="image"] {
+        /*이미지 경로에 image 로 시작 하면 적용*/
+        border-color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="style01">
+      <h2>상담일지</h2>
+      <p>
+        2023년 9월 6일<br />
+        학생 몇명이 토요일날 나오기 싫다고 함!!!! <br />
+        대처 : 귀를 닫음
+      </p>
+    </div>
+    <div class="style02">
+      <img src="../image/dog002.jpg" alt="" />
+    </div>
+  </body>
+</html>

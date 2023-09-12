@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exam03</title>
+    <script>
+      let x = 1,
+        y = 0,
+        z = -1;
+      let result = x++ || (y-- && ++z);
+      alert(`x : ${x}, y : ${y}, z : ${z}, result : ${result}<br>`);
+
+      let data;
+      data = data || 0; //데이터 임의 값 없을 시 초기화
+      true && alert("경고창이 보이냐?");
+      false && alert("false(AND) 경고창이 보이냐?");
+      true || alert("경고창 보이냐?");
+      false || alert("false(OR)경고창 보이냐?");
+      let a = 10,
+        b = 20,
+        c = 30;
+      document.write("a : " + a + ", b : " + b + ", c : " + c + "<br>");
+      document.write(`a : ${a}, b : ${b}, c : ${c} <br>`);
+    </script>
+  </head>
+  <body></body>
+</html>

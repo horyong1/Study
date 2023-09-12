@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #monitor {
+        text-align: right;
+      }
+    </style>
+    <script>
+      function numclick(value) {
+        let monitor = document.getElementById("monitor");
+
+        if (monitor.value == 0) {
+          monitor.value = value;
+        } else {
+          switch (value) {
+            case "=":
+              monitor.value = eval(monitor.value);
+              break;
+
+            case "clear":
+              monitor.value = 0;
+              break;
+
+            default:
+              monitor.value += value;
+              break;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="monitor" value="0" /><br />
+    <input type="button" value="1" onclick="numclick(this.value)" />
+    <input type="button" value="2" onclick="numclick(this.value)" />
+    <input type="button" value="3" onclick="numclick(this.value)" /><br />
+    <input type="button" value="4" onclick="numclick(this.value)" />
+    <input type="button" value="5" onclick="numclick(this.value)" />
+    <input type="button" value="6" onclick="numclick(this.value)" /><br />
+    <input type="button" value="7" onclick="numclick(this.value)" />
+    <input type="button" value="8" onclick="numclick(this.value)" />
+    <input type="button" value="9" onclick="numclick(this.value)" /><br />
+    <input type="button" value="0" onclick="numclick(this.value)" />
+    <input type="button" value="+" onclick="numclick(this.value)" />
+    <input type="button" value="-" onclick="numclick(this.value)" /><br />
+    <input type="button" value="*" onclick="numclick(this.value)" />
+    <input type="button" value="/" onclick="numclick(this.value)" />
+    <input type="button" value="=" onclick="numclick(this.value)" />
+    <input type="button" value="clear" onclick="numclick(this.value)" />
+  </body>
+</html>

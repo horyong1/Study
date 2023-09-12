@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let array = [10, 20, 30, 40];
+      // let copy = array; //Shallow Copy(얕은 복사)
+      //   let copy = [];
+
+      //   for (let data of array) {
+      //     copy.push(data);
+      //   }
+      //Deep copy
+      let copy = [...array];
+
+      document.write(`array : [${array}]<br>`);
+      document.write(`copy : [${copy}]<br>`);
+
+      copy[2] = 10000;
+      document.write(`array : [${array}]<br>`);
+      document.write(`copy : [${copy}]<br>`);
+
+      let bool = false;
+      for (let data of array) {
+        if (data % 3 == 0) {
+          bool = true;
+          break;
+        }
+      }
+      document.write(bool + "<br>");
+
+      bool = array.every(function (element) {
+        return element % 3 == 0;
+      });
+      document.write(bool);
+
+      let s = 0;
+      for (let data of array) {
+        s += data;
+      }
+
+      s = array.reduce(function (element, left) {
+        return element + left;
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

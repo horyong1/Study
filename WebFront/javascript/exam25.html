@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exam25</title>
+    <script>
+      window.onload = function () {
+        let divTag = document.querySelector("div");
+        let hTag = document.querySelector("h1");
+        let spanTag = document.querySelector("span");
+        //이벤트 버블링(자식에서 부터 올라가면서 같은 이벤트가 있으면 실행)
+        divTag.onclick = function () {
+          alert("div click.....");
+        };
+        hTag.onclick = function (e) {
+          alert("h1 click.....");
+          e.cancelBubble = true; // 이벤트 버블링을 여기 이후로 멈추게 함
+        };
+        spanTag.onclick = function () {
+          alert("span click.....");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>
+        <span> Hello </span>
+      </h1>
+    </div>
+  </body>
+</html>

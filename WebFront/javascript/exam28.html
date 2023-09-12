@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function checkForm() {
+        let f = document.searchForm;
+
+        if (f.searchType.selectedIndex == 0) {
+          alert("검색항목을 선택하세요!!!!");
+          f.searchType.focus();
+          return false;
+        }
+
+        let words = ["", "제목", "작성자"];
+        if (f.searchWord.value == "") {
+          alert(`검색할 ${words[f.searchType.selectedIndex]} 입력하세요!!!!`);
+          f.searchWord.focus();
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <form
+      action="http://www.naver.com"
+      name="searchForm"
+      onsubmit="return checkForm()"
+      target="_blank"
+    >
+      <select name="searchType" id="">
+        <option>선택하세요</option>
+        <option>제목</option>
+        <option>작성자</option>
+      </select>
+      <input type="text" name="searchWord" />
+      <input type="submit" value="검색" />
+    </form>
+  </body>
+</html>

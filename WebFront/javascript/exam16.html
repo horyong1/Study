@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let sub = window.open("", "", "width=500, height=400");
+      if (!sub) {
+        alert("팝업창 해제를 해주세요");
+      }
+      sub.moveTo(100, 100); //절대 좌표
+      sub.moveBy(100, 100); //상대 좌표
+
+      let id = setInterval(function () {
+        sub.moveBy(50, 50);
+      }, 1000);
+
+      setTimeout(function () {
+        clearInterval(id);
+        sub.resizeTo(screen.width, screen.height);
+      }, 10000);
+    </script>
+  </head>
+  <body></body>
+</html>

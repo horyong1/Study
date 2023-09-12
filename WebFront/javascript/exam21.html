@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        // document.body.div.h2.innerHTML;
+        document.getElementById("h2Tag");
+        console.log(h2Tag);
+        h2Tag.innerHTML = "변경된 제목";
+
+        let pTag = document.querySelector("#pTag");
+        console.log(pTag);
+        pTag.innerText = "수정 수정 공지사항 ..... 수정";
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <h2 id="h2Tag">DIV 제목</h2>
+      <p>안녕하세요!!!!!!!</p>
+    </div>
+    <h2>나는 또 다른 제목</h2>
+    <p id="pTag">공지사항 입니다.</p>
+  </body>
+</html>

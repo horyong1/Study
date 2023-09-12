@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exam12</title>
+    <style>
+      #number li {
+        float: left;
+        list-style-type: none;
+        margin: 0px 30px 0px 0px;
+      }
+
+      li:first-child {
+        color: orange;
+      }
+      /**/
+      li:last-child {
+        color: blue;
+      }
+      /*2n+1 번쨰에 스타일 적용 */
+      li:nth-child(3n) {
+        color: palevioletred;
+      }
+
+      p {
+        clear: both;
+      }
+      /*a태그 link 색 변경 및 밑줄 제거*/
+      a:link {
+        color: green;
+        text-decoration: none;
+      }
+      /*a태그 방문 한 후에도 색변화 없게 끔 */
+      a:visited {
+        color: green;
+      }
+      /*a태그에 마우스 올리면 변화*/
+      a:hover {
+        font-weight: bold;
+        color: orange;
+        text-decoration: underline;
+      }
+      /*p태그의 마지막 태그 부분 선택*/
+      p:last-of-type::first-letter {
+        font-size: 3em;
+      }
+
+      p:last-of-type::first-line {
+        text-decoration: underline;
+      }
+
+      p::selection {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="number">
+      <li>ONE</li>
+      <li>TWO</li>
+      <li>THREE</li>
+      <li>FOUR</li>
+      <li>FIVE</li>
+      <li>SIX</li>
+      <li>SEVEN</li>
+      <li>EIGHT</li>
+      <li>NINE</li>
+      <li>TEN</li>
+    </ul>
+    <p>
+      <a href="http://www.naver.com" target="_blank">NAVER</a>
+      <a href="http://www.daum.net" target="_blank">DAUM</a>
+    </p>
+    <p>
+      ABCDEFGHIJKLM <br />
+      NOPQRSTUVWXYZ
+    </p>
+  </body>
+</html>

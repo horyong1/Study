@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let btn = document.getElementById("btn");
+
+        //표준 이벤트 모델 addEventListener()
+        //addEventListener('이벤트 속성', handler, capturing여부(기본값 false버블링))
+        btn.addEventListener(
+          "click",
+          function () {
+            alert("button click....!!!");
+          },
+          true
+        );
+
+        let sp = document.querySelector("span");
+
+        sp.addEventListener("click", function () {
+          alert("span click.....!!!!!");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <button id="btn"><span>CLICK</span></button>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let num = Number(prompt("정수를 입력하세요"));
+
+      let msg = `${num} : ${num % 2 ? "홀수" : "짝수"}`;
+      alert(msg);
+
+      if (num % 2) {
+        //num % 2 == 1 같은 뜻
+        alert(`if ${num} : 홀수`);
+      } else {
+        alert(`if ${num} : 짝수`);
+      }
+
+      switch (num % 2) {
+        case 0:
+          alert(`swicht ${num} : 짝수`);
+          break;
+        case 1:
+          alert(`swicht ${num} : 홀수`);
+          break;
+      }
+
+      for (;;) {
+        let name = prompt("이름를 입력하세요");
+        let age = Number(prompt("나이를 입력하세요"));
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

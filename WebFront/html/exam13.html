@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exam13</title>
+  </head>
+  <body>
+    <!--_
+        <form>
+            <input type=""/>
+                   type     text(한줄입력)
+                            password(암호처리)
+                            checkbox(중복선택)
+                            radio(단일선택)
+                            button(사용자정의 이벤트)
+                            file(첨부파일)
+                            reset(초기화)
+                            hidden(입력받지 않은 정보 전송)
+                            submit(입력받은 모든 데이터 전송)
+
+        <textarea></textarea> 여러 줄 입력 할때(100자 내외 작성 등)
+        </form>
+    -->
+
+    <form action="https://www.naver.com">
+      아이디&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="id" /><br />
+      비밀번호 : <input type="password" name="pwd" />
+      <input type="submit" value="로그인" />
+      <br />
+      <fieldset style="width: 500px">
+        <legend>희망연봉</legend>
+        <input type="radio" name="salary" />2800-3000
+        <input type="radio" name="salary" />3000-3300
+        <input type="radio" name="salary" />3300-3500
+        <input type="radio" name="salary" />3500-3800
+      </fieldset>
+
+      <fieldset>
+        <legend>사용 가능한 언어(중복선택 가능)</legend>
+        <input type="checkbox" name="lang" />C
+        <input type="checkbox" name="lang" />C++
+        <input type="checkbox" name="lang" />JAVA
+        <input type="checkbox" name="lang" />JAVASCRIPT
+      </fieldset>
+
+      <h3>자기소개(300자 내외)</h3>
+      <textarea name="" id="" cols="100" rows="10"></textarea>
+
+      <h3>첨부파일</h3>
+      <input type="file" /><br />
+      <input type="reset" value="reset" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exam24</title>
+    <script>
+      window.onload = function () {
+        //고전적 이벤트 모델
+        let btn = document.getElementById("btnClick");
+        btn.onclick = function () {
+          alert("btn click.............!");
+        };
+        //document로  HTML 구성
+        let hTag = document.createElement("h1");
+        let text = document.createTextNode("클릭해봐");
+        hTag.appendChild(text);
+        document.body.appendChild(hTag);
+        hTag.style.backgroundColor = "salmon";
+
+        //hTag 클릭 이벤트
+        hTag.onclick = function () {
+          alert("이미지 클릭했다");
+          this.style.color = "blue";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <!-- 인라인 이벤트 모델 제어(이벤트 발생지에 직접 이벤트를 넣어줌) -->
+    <button onclick="alert('click....')">클릭해봐</button>
+    <button id="btnClick">클릭</button>
+  </body>
+</html>

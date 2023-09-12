@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function returnFunc(name) {
+        let msg = `반갑습니다. [${name}님]!!!`;
+        // let func = function () {
+        //   alert(msg);
+        // };
+        // return func;
+        return function () {
+          //리턴 값으로 함수를 리턴 할수 있음
+          alert(msg);
+        };
+      }
+
+      //   let fn = returnFunc("홍길동");
+      //   fn();
+      returnFunc("홍길동")(); //리턴 값으로 받은 함수를 사용 가능함
+
+      // 변수 선언 시 기본적으로 스택이나 힙에 저장됨
+      // 컴퓨터는 변수를 기억하는게 아니라 주소값을 기억하여 사용됨
+    </script>
+  </head>
+  <body></body>
+</html>

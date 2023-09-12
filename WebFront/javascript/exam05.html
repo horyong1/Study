@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let array = [10, 20, "A", "B", true, null, 12.334, "hello world"];
+      document.write(`array : ${array}, 총 개수 : ${array.length}<br>`);
+      array[8] = 40;
+      array[10] = 100;
+      document.write(`array : ${array}, 총 개수 : ${array.length}<br>`);
+
+      array[array.length] = 10;
+      array.push("안녕");
+      document.write(`array : ${array}, 총 개수 : ${array.length}<br>`);
+
+      let arr = [];
+      arr[arr.length] = 10;
+      arr[arr.length] = 430.36;
+      arr.push(true);
+      arr.pop();
+      document.write(`arr : ${arr}, 총 개수 : ${arr.length}`);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function func(a, b, c) {
+        document.write(`a : ${a} b : ${b} c : ${c}`);
+      }
+      // func(10,20,30)
+
+      function func02(...numbers) {
+        console.log(numbers);
+      }
+
+      function func03(a, b, ...args) {
+        console.log(a, b, ...args);
+      }
+
+      let array = [5, 6, 2];
+      func03(...array);
+      func03(10, 20, 30, 40, 50);
+
+      //func(array);
+      //func(array[0], array[1], array[2]);
+      //func.apply(null, array);
+      //   func.apply(...array);
+      func02(...array);
+    </script>
+  </head>
+  <body></body>
+</html>
