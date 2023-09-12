@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //함수를 이용한 객체 생성
+      function Person(name, phone, addr) {
+        this.name = name;
+        this.phone = phone;
+        this.addr = addr;
+
+        this.info = function () {
+          for (let key in this) {
+            if (typeof this[key] != "function") {
+              document.write(`${key} : ${this[key]}<br>`);
+            }
+          }
+        };
+      }
+
+      //prototype 에 aaa 함수를 추가한다고하면
+      //Person함수에서 생성된 모든 객체에 함수가 추가 되어 사용 가능함
+      Person.prototype.aaa = function () {
+        alert("call  aaa()...!!!");
+      };
+
+      let p = new Person("홍길동", "010-1111-2222", "서울");
+      let p2 = new Person("초길동", "010-3333-4444", "울산");
+      console.log(p);
+      p.info();
+      document.write(p.toString());
+      p.aaa();
+    </script>
+  </head>
+  <body></body>
+</html>

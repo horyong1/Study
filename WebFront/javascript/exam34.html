@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function makePerson(name, phone, addr) {
+        let p = {
+          name: name,
+          phone: phone,
+          addr: addr,
+        };
+
+        return p;
+      }
+
+      let p = makePerson("홍길동", "010-1111-2222", "경기도 성남시");
+
+      let persons = [p];
+      persons.push(makePerson("김길동", "010-3333-4444", "서울특별시 송파구"));
+
+      for (let i in persons) {
+        console.log(persons[i]);
+      }
+
+      for (let person of persons) {
+        for (let key in person) {
+          document.write(`${key} : ${person[key]}<br>`);
+        }
+        document.write("<hr>");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

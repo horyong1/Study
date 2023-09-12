@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //this로 만들지 않아서 객체 key 값이나 value값이 보이지 않음
+      //직접 접근도 불가능
+      /**
+       * p_name : 이름
+       * p_phone : 전화번호
+       * p_addr : 주소
+       */
+      function Person(p_name, p_phone, p_addr) {
+        let name = p_name;
+        let phone = p_phone;
+        let addr = p_addr;
+
+        // this.getName = function () {
+        //   return name;
+        // };
+
+        this.getName = () => name;
+
+        // this.setName = function (new_name) {
+        //   name = new_name;
+        // };
+
+        this.setName = (new_name) => (name = new_name);
+      }
+
+      let p = new Person("홍길동", "010-1111-2222", "서울 동작구");
+      document.write(`변경 전 이름 : ${p.getName()}<br>`);
+      p.setName("김철수");
+      document.write(`변경 후 이름 : ${p.getName()}`);
+    </script>
+  </head>
+  <body></body>
+</html>

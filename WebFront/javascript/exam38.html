@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let person = {
+        name: "홍길동",
+        phone: "010-1111-2222",
+        "office-phone": "02-3233-2322", //콘솔에서 검색 시 person['office-phone']
+        age: 20,
+      };
+
+      //JSON 객체 데이터를 문자열로 변경(JSON.stringify)
+      let strPerson = JSON.stringify(person);
+      console.log(strPerson, typeof strPerson);
+
+      //문자열을 JSON 객체로 변환 할때 (JSON.parse())
+      let p = JSON.parse(strPerson);
+      console.log(p, typeof p);
+    </script>
+  </head>
+  <body></body>
+</html>

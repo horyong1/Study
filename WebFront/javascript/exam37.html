@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Person {
+        constructor(name, phone, addr) {
+          this._name = name;
+          this._phone = phone;
+          this._addr = addr;
+        }
+
+        get name() {
+          return this._name;
+        }
+
+        set name(name) {
+          this._name = name;
+        }
+
+        info() {
+          document.write(`이름 : ${this._name}<br>`);
+          document.write(`전화번호 : ${this._phone}<br>`);
+          document.write(`주소 : ${this._addr}<br>`);
+          document.write("<hr");
+        }
+      }
+
+      class Doctor extends Person {
+        constructor(name, phone, addr, major) {
+          super(name, phone, addr);
+          this._major = major;
+        }
+      }
+
+      let p = new Person("홍길동", "010-2222-3333", "서울시");
+      console.log(p);
+      p.info();
+
+      let d = new Doctor(
+        "나최고",
+        "010-2232-4444",
+        "경기도 성남시",
+        "정형외과"
+      );
+      console.log(d);
+    </script>
+  </head>
+  <body></body>
+</html>
