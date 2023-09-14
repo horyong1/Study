@@ -6,3 +6,4 @@ React.js 환경설정
 2.통합 콘솔 창에 npm install -g create-react-app 입력
 	- 테스트로 npx create-react-app (basicapp) 입력 ()<-괄호 부분 프로젝트 이름
 	- 이후 콘솔창에 나온 명령어와 같이 cd basic_app -> npm start 입력 후 웹페이지 확인
+	npm install -g node-sass
