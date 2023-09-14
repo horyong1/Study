@@ -1,0 +1,33 @@
+.todoInput {
+  display: flex;
+  background-color: rgb(184, 235, 255);
+
+  input {
+    flex: 1;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    background: none;
+    color: gray;
+    // input 안에 input을 적으려면 &  입력 하면 됨
+    &::placeholder {
+      color: gray;
+    }
+  }
+  //   input::placeholder {
+  //     color: red;
+  //   }
+  button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: black;
+    font-size: 1.7em;
+    background-color: white;
+    &:hover {
+      background-color: white;
+      color: red;
+    }
+  }
+}
