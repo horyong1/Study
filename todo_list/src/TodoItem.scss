@@ -14,7 +14,7 @@
     cursor: pointer;
     &:checked + .text {
       text-decoration: line-through;
-      color: white;
+      color: black;
     }
   }
 
