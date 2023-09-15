@@ -12,7 +12,7 @@
     color: gray;
     // input 안에 input을 적으려면 &  입력 하면 됨
     &::placeholder {
-      color: gray;
+      color: white;
     }
   }
   //   input::placeholder {
@@ -20,10 +20,11 @@
   //   }
   button {
     cursor: pointer;
+    width: 40px;
     outline: none;
     border: none;
     color: black;
-    font-size: 1.7em;
+    
     background-color: white;
     &:hover {
       background-color: white;

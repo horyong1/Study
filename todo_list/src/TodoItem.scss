@@ -1,0 +1,45 @@
+.todoItem {
+  display: flex;
+  background-color: gainsboro;
+
+  & + & {
+    border-bottom: solid 1px lightgray;
+  }
+
+  &:nth-child(2n + 1) {
+    background-color: white;
+  }
+
+  .checkbox {
+    cursor: pointer;
+    &:checked + .text {
+      text-decoration: line-through;
+      color: white;
+    }
+  }
+
+  .text {
+    flex: 1;
+    margin-left: 0.4em;
+    padding: 0.5em;
+  }
+
+  button {
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    color: black;
+    background-color: white;
+    width: 40px;
+    
+    padding-top: 5px;
+    &:hover {
+      background-color: red;
+    }
+
+    &:nth-child() {
+      background-color: white;
+    }
+  }
+}
