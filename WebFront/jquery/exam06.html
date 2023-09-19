@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //태그 value 값 추출 방법
+      $(document).ready(function () {
+        //id=p01 문장 값 변경
+        $("#btn01").click(function () {
+          $("#p01").text("변환된 문장입니다.");
+        });
+        //id=p02 문장 값 변경
+        $("#btn02").click(function () {
+          $("#p02").html("<mark>변환된 문장입니다.</mark>");
+        });
+
+        //a 태그 href 값 추출
+        $("#btn03").click(function () {
+          alert($("a").attr("href"));
+        });
+
+        //a 태그 href 값 변경
+        $("#btn04").click(function () {
+          $("a").attr("href", "http://www.daum.net");
+        });
+
+        //p태그 값 변경 방법
+        $("#btn05").click(function () {
+          //   $("p").html("<em>문장변환 완료</em>");
+          // html함수 안에서도 함수 호출 가능
+          $("p").html(function (index, element) {
+            return `<em>${index + 1}. 문장 변환 완료</em>`;
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="http://www.naver.com">사이트 이동</a>
+    <p id="p01">첫번쨰 문장입니다.</p>
+    <p id="p02">두번째 문장입니다.</p>
+    <button id="btn01">TEXT버튼</button>
+    <button id="btn02">HTML버튼</button>
+    <button id="btn03">주소추출</button>
+    <button id="btn04">주소변환</button>
+    <button id="btn05">문장변환</button>
+  </body>
+</html>
