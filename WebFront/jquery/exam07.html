@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("#addBtn").click(function () {
+          // <h1>세 번쨰 문장</h1>
+          //   $("addBtn").append("<h1>세 번째 문장</h1>"); //값 추가
+          //   $("addBtn").prepend("<h1>세 번째 문장</h1>"); //첫번째 자식으로 추가됨
+          //   $("addBtn").after("<h1>세 번째 문장</h1>"); //div 태그 뒤에 붙어 나옴
+          //   $("addBtn").before("<h1>세 번째 문장</h1>"); //div 태그 앞에 붙어 나옴
+          $("div").before("<h1>세 번째 문장</h1>");
+        });
+
+        $("#delBtn").click(function () {
+          $("h1:first").remove(); // remove() 는 부모까지 지움, empty() 자식만 지움
+        });
+
+        $("#redBtn").click(function () {
+          // $("h1").css("color", "led");
+          $("h1").addClass("red"); // 클래스 추가
+          $("h1").removeClass("blue"); // 클래스 blue 삭제
+        });
+
+        $("#blueBtn").click(function () {
+          // $("h1").css("color", "blue");
+          $("h1").addClass("blue"); //클래스 추가
+          $("h1").removeClass("red"); // 클래스 red 삭제
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>첫 번째 문장</h1>
+      <h1>두 번째 문장</h1>
+    </div>
+    <button id="addBtn">ADD</button>
+    <button id="delBtn">DELETE</button>
+    <button id="redBtn">RED</button>
+    <button id="blueBtn">BLUE</button>
+  </body>
+</html>
