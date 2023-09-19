@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("input").keyup(function () {
+          console.log($(this).val()); // value값 val()로 확인 가능
+        });
+        //여러 이벤트 함수를 객체형태로 입력 하여 사용 가능함
+        $("div").on({
+          click: function () {
+            $(this).css({
+              color: "red",
+              "font-weight": "bold",
+            });
+          },
+          mouseenter: function () {
+            $(this).css("background-color", "yellow");
+          },
+          mouseleave: function () {
+            $(this).css("background-color", "green");
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>ID : <input type="text" name="id" /></div>
+  </body>
+</html>
