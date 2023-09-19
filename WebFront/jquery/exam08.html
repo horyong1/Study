@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        //마지막 사진을 span tag 맨앞으로 이동
+        $("#nextBtn").click(function () {
+          $("img").last().prependTo("#gallery");
+        });
+
+        //첫번째 사진을 span tag 맨뒤로 이동
+        $("#prevBtn").click(function () {
+          $("img").first().appendTo("#gallery");
+        });
+
+        //2초에 한번씩 next 버튼 클릭되면서 사진 넘어가기
+        setInterval(function () {
+          $("#nextBtn").trigger("click"); //트리거 이벤트로 버튼 클릭 이벤트 발생 하도록 함
+        }, 2000);
+      });
+    </script>
+  </head>
+  <body>
+    <button id="prevBtn">PREV</button>
+    <span id="gallery">
+      <img src="../image/dog001.jpg" />
+      <img src="../image/dog002.jpg" />
+      <img src="../image/dog003.jfif" />
+      <img src="../image/dog004.jfif" />
+    </span>
+    <button id="nextBtn">NEXT</button>
+  </body>
+</html>
