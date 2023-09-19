@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: red;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 애니메이션 설정법
+      $(document).ready(function () {
+        $("div").animate(
+          {
+            width: "200px",
+            height: "+=200px",
+            left: "100px",
+            opacity: "0.6", //흐리게 보이기
+          },
+          2000
+        );
+        $(document).ready(function () {
+          $("div").animate(
+            {
+              width: "100px",
+              height: "100px",
+              left: "200px",
+              opacity: "0.2", //흐리게 보이기
+            },
+            2000
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
