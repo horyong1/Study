@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- 창을 띄워서 개발자 도구에서 $를 입력 했을때 ƒ (e,t){return new ce.fn.init(e,t)} 뜨면 정상 작동 
+    JQuery 사용 시 밑에 처럼 라이브러리 등록 후 사용(CDN 방식)-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    //window.onload 한번만 실행되어 맨 밑에 있는걸로 실행됨
+    window.onload = function () {
+      //alert("로드 완료...");
+    };
+    window.onload = function () {
+      //  alert("hahahahah..");
+    };
+
+    // $(선택자).함수()
+    //$(document).ready() == window.onload 같은 작업
+    $(document).ready(function () {
+      // alert("ready@@@@@");
+    });
+    //Jquery 는 두 함수 다 실행됨 단, 순서는 정해져있지 않음
+    $(document).ready(function () {
+      // alert("ready2@@@@@");
+    });
+    //익명 함수처럼 함수 정의도 가능함, 일반적인 형태는 1번째로 보면됨
+    $(function () {
+      // alert("ready3$$$$$$$$");
+    });
+
+    $(document).ready(function () {
+      // $('#id01').hide();
+      // $(".c01").hide();
+      // $("h1 + h1").hide();
+      // $("h1:first").hide();
+      // $('h1').hide(1000);
+    });
+
+    $(document).ready(function () {
+      alert("ready");
+      //   $("ul li").hide(); //display이가 none으로 되어 안보임
+      //   $("ul li:first").hide(); //ul 태그 밑 li 첫번째인 호랑이만 사라짐
+      //   $("ul li:first-child").hide(); //ul 태그 밑 li 첫번째 자식인 부분만 사라짐(호랑이, 김밥)
+    });
+  </script>
+  <body>
+    <h1>동물종류</h1>
+    <ul>
+      <li>호랑이</li>
+      <li>팬더</li>
+      <li>사자</li>
+      <li>코끼리</li>
+    </ul>
+    <h1>음식종류</h1>
+    <ul>
+      <li>김밥</li>
+      <li>순대</li>
+      <li>튀김</li>
+      <li>오뎅</li>
+    </ul>
+
+    <h1 id="id01">Hello</h1>
+    <h1>Hi</h1>
+  </body>
+</html>
