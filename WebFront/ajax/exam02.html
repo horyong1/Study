@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #resultboxoffice {
+        border: 1px solid red;
+        width: 600px;
+        height: 800px;
+      }
+      hr {
+        width: 600px;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#searchBtn").click(function () {
+          let searchDate = $("#searchDate").val();
+          searchDate = searchDate.split("-").join("");
+          console.log(searchDate);
+          //영화진흥위원회 오픈 API
+          $.ajax({
+            url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+            type: "get",
+            data: {
+              key: "f5179714e5f57d72bef7a5cb206befe5",
+              targetDt: searchDate,
+            },
+            success: callback, // 성공시에 바로 값 받기보단 콜백 함수를 실행함
+            error: function () {
+              alert("실패");
+            },
+          });
+        });
+      });
+
+      function callback(result) {
+        console.log(result);
+
+        let list = result.boxOfficeResult.dailyBoxOfficeList; //
+        for (let movieInfo of list) {
+          let rank = movieInfo.rank;
+          let name = movieInfo.movieNm;
+          let audiCnt = movieInfo.audiCnt;
+
+          $("#resultboxoffice").append(`<h2>${rank}위</h2>`);
+          $("#resultboxoffice").append(
+            `<strong>${name}(${audiCnt}명)</strong>`
+          );
+          $("#resultboxoffice").append(`<hr>`);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>일별 박스 오피스 조회 서비스</h2>
+    조회날짜 : <input type="date" id="searchDate" />
+    <button id="searchBtn">검색</button>
+    <h3>검색결과</h3>
+    <div id="resultboxoffice"></div>
+  </body>
+</html>
