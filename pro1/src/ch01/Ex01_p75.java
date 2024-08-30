@@ -2,7 +2,7 @@
  * print() 출바꿈 없음 
  * println() 줄바굼 
  * */
-package chap01;
+package ch01;
 
 public class Ex01_p75 {
 

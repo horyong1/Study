@@ -1,4 +1,4 @@
-package chap01;
+package ch01;
 
 /**
  * 기본타입(primitive type): 값저장
