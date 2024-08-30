@@ -50,12 +50,13 @@ public class Ex02_p83 {
 		
 		System.out.println(number5 == number6);
 		System.out.println(number5 == number7);
+
 		
 		float number8 = number5;
-		double number9 = number8;
-		
 		System.out.println("number8 값 : " + number8);
+		double number9 = number8;
 		System.out.println("number9 값 : " + number9);
+		
 		
 		
 	}
