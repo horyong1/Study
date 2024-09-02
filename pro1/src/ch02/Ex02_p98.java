@@ -1,15 +1,17 @@
 package ch02;
 
+// 정수연산에서 자동타입변환
 /**
  * 기본타입: 값 저장
  * 정수 : byte(1), short(2), int(4), long(8) 
  * 실수 : float(4), double(8)
+ * - byte(1)<short(2)<int(4)<float(4)<long(8)<double(8)
  * 논리값 : boolean (true, false)
  * 문자 : char(2) 아스키코드 or 유니코드 (c언어와 호환용)
  * */
 
 // 정수 연산에서의 자동 타입 변환
-public class Ex01_p98 {
+public class Ex02_p98 {
 	public static void main(String[] main) {
 //		int result2; // 변수선언문법 > 타입 변수명;
 		int num1 = 10;

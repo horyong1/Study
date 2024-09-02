@@ -6,7 +6,7 @@ package ch02;
  * 유니코드는 세계 각국의 문자를 2byte로 표현할 수 있는 숫자(0~65535)
  * 'A' 'a' '1' '가' '호' 
  * */
-public class Ex00_85 {
+public class Ex00_p85 {
 	public static void main(String[] args) {
 		char c1 = 'A';
 		System.out.println("c1애 저장된 A = " + c1);
