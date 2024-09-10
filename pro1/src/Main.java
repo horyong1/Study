@@ -1,19 +1,25 @@
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		int sum = 0;
-		int n = 0;
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		int[] arr = new int[str.length()];
 		
-		while(sum < 100) {
-			n++;
-			if(n % 2 == 0) {
-				sum -= n;
-				
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = str.charAt(i) - '0';
+		}
+		int result = arr[0];
+		
+		for(int i = 1; i < arr.length; i++ ) {
+			if(arr[i] <= 1 || result <= 1) {
+				result += arr[i];
 			}else {
-				sum += n;
+				result = result * arr[i];
 			}
 		}
-		System.out.println(n);
-		System.out.println(sum);
+		sc.close();
+		System.out.println(result);
+		
 	}
 }
