@@ -9,15 +9,15 @@ public class Main {
 		int i = 0;
 		int num;
 		while(money > 0) {
-			num = money/arr[i];
+			num = money / arr[i];
 			
 			if(num == 0) {
 				i++;
 				continue;
 			}
 			
-			System.out.println(arr[i]+"원 짜리 " + num +"개");
-			money = money -num*arr[i];
+			System.out.println(arr[i] + "원 짜리 " + num + "개");
+			money = money - num * arr[i];
 			i++;
 		}
 	}
