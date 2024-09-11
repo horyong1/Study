@@ -22,9 +22,9 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 
 		int cnt = 0;
-		String[] nameList = new String[1];
-		int[] ageList = new int[1];
-		int[] scoreList = new int[1];
+		String[] nameList = new String[10];
+		int[] ageList = new int[10];
+		int[] scoreList = new int[10];
 		
 		
 		System.out.println("************************");
@@ -111,6 +111,8 @@ public class App {
 						}
 					}
 				}
+				int t = sc.nextInt();
+		
 				
 				// ArrayList - 내부구조
 				if(nameList.length == cnt) {
@@ -128,14 +130,25 @@ public class App {
 					ageList = newAgeList;
 					scoreList = newScoreList;
 				}
-				
+		
+				if(t == 1 ) {
+					for(int i = 10; i < 15; i++) {
+						nameList[cnt] = String.valueOf(i);
+						ageList[cnt] = i;
+						scoreList[cnt] = i;	
+						cnt++;
+						
+					}
+				}else {
 					nameList[cnt] = studentName;
 					ageList[cnt] = studentAge;
 					scoreList[cnt] = score;	
+					
+					cnt++;
+				}
 				
 				
-				cnt++;
-			
+				
 //				if(cnt == nameList.length) {
 //					nameList = Arrays.copyOf(nameList, cnt+1);
 //					ageList = Arrays.copyOf(ageList, cnt+1);
@@ -152,22 +165,25 @@ public class App {
 				if(yn.equals("Y")) {
 					int[] tempScore = scoreList;
 					String[] tempName = nameList;
-					int tscore = 0;
-					String tempname = "";
-
-					for(int i = 0; i < cnt; i ++) {
-						System.out.println("학생점수 : " + tempScore[i]);
-					}
 					
-					for(int i = 0; i < cnt; i++) {
-						for(int j = 1; j < cnt; j++) {
-							if(tempScore[i] > tempScore[j]) {
-								tscore = tempScore[i];
+
+					for(int i = 0; i < cnt-1; i++) {
+						for(int j = i+1 ; j < cnt; j++) {
+							if(tempScore[i] < tempScore[j]) {
+								int tscore = tempScore[i];
 								tempScore[i]=tempScore[j];
 								tempScore[j] = tscore;
+								
+								String tname = tempName[i];
+								tempName[i] = tempName[j];
+								tempName[j] = tname;
 							}
 						}
-						tscore=0;
+					}
+					
+					for(int i = 0; i < cnt; i ++) {
+						System.out.println("학생이름 : " + tempName[i]);
+						System.out.println("학생점수 : " + tempScore[i]);
 					}
 					
 				}else {
