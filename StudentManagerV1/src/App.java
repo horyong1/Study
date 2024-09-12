@@ -22,10 +22,10 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 
 		int cnt = 0;
-		String[] nameList = new String[10];
-		int[] ageList = new int[10];
-		int[] scoreList = new int[10];
-		
+		String[] nameList = new String[5];
+		int[] ageList = new int[5];
+		int[] scoreList = new int[5];
+		int[] indexList = new int[5];
 		
 		System.out.println("************************");
 		System.out.println("*      학생 관리 프로그램     *");
@@ -60,8 +60,16 @@ public class App {
 				int score = 0;
 				
 				System.out.println("[학생 정보 입력 로직 시작]");
-				System.out.print("학생 이름 입력 >>> ");
-				studentName = sc.nextLine();
+				while(true) {
+					System.out.print("학생 이름 입력 >>> ");
+					studentName = sc.nextLine();
+					
+					if(studentName.length() < 2) {
+						System.out.println("이름을 정확히 다시 입력해주세요");
+					}else {
+						break;
+					}
+				}
 
 				while(true) {	
 					//Q.숫자가 아닌 문자가 입력되었을때, 에러문구 출력 및 재 입력
@@ -119,21 +127,26 @@ public class App {
 					String[] newNameList = new String[cnt * 2];
 					int[] newAgeList = new int[cnt * 2];
 					int[] newScoreList = new int[cnt * 2];
+					int[] newIndexList = new int[cnt * 2];
 					
 					for(int i = 0; i < cnt; i++) {
 						newNameList[i] = nameList[i];
 						newAgeList[i] = ageList[i];
 						newScoreList[i] = scoreList[i];
+						newIndexList[i] = indexList[i];
 					}
 					
 					nameList = newNameList;
 					ageList = newAgeList;
 					scoreList = newScoreList;
+					indexList = newIndexList;
 				}
 		
 				if(t == 1 ) {
+					String[] name = {"홍길동","김철수","이영희","GPT","홍길동"};
 					for(int i = 10; i < 15; i++) {
-						nameList[cnt] = String.valueOf(i);
+						indexList[cnt] = cnt+1;
+						nameList[cnt] = name[cnt];
 						ageList[cnt] = i;
 						scoreList[cnt] = i;	
 						cnt++;
@@ -142,7 +155,8 @@ public class App {
 				}else {
 					nameList[cnt] = studentName;
 					ageList[cnt] = studentAge;
-					scoreList[cnt] = score;	
+					scoreList[cnt] = score;
+					indexList[cnt] = cnt+1;
 					
 					cnt++;
 				}
@@ -162,33 +176,48 @@ public class App {
 				// Q. '점수를 기준으로 내림차순으로 출력할까요?(Y/n)'
 				System.out.print("점수를 기준으로 내림차순으로 출력할까요?(Y/n) >>> ");
 				String yn = sc.nextLine();
-				if(yn.equals("Y")) {
-					int[] tempScore = scoreList;
-					String[] tempName = nameList;
+				
+				if(yn.equals("Y") || yn.equals("y")) {
+					String[] tempName = new String[cnt];
+					int[] tempAge = new int[cnt];
+					int[] tempScore = new int[cnt];
+					for(int i = 0; i < cnt; i++) {
+						tempName[i] = nameList[i];
+						tempAge[i] = ageList[i];
+						tempScore[i] = scoreList[i];
+					}
 					
-
 					for(int i = 0; i < cnt-1; i++) {
 						for(int j = i+1 ; j < cnt; j++) {
 							if(tempScore[i] < tempScore[j]) {
-								int tscore = tempScore[i];
-								tempScore[i]=tempScore[j];
-								tempScore[j] = tscore;
-								
 								String tname = tempName[i];
 								tempName[i] = tempName[j];
 								tempName[j] = tname;
+
+								int tage = tempAge[i];
+								tempAge[i] = tempAge[j];
+								tempAge[j] = tage;
+								
+								int tscore = tempScore[i];
+								tempScore[i]=tempScore[j];
+								tempScore[j] = tscore;
+
 							}
 						}
 					}
-					
+					System.out.println("--------------------");
 					for(int i = 0; i < cnt; i ++) {
+						System.out.println("순번 : " + indexList[i]);
 						System.out.println("학생이름 : " + tempName[i]);
+						System.out.println("학생나이 : " + tempAge[i]);
 						System.out.println("학생점수 : " + tempScore[i]);
+						System.out.println("--------------------");
 					}
 					
 				}else {
 					System.out.println("--------------------");
 					for(int i = 0; i < cnt; i++) {
+						System.out.println("순번 : " + indexList[i]);
 						System.out.println("학생이름 : " + nameList[i]);
 						System.out.println("학생나이 : " + ageList[i]);
 						System.out.println("학생점수 : " + scoreList[i]);
@@ -203,17 +232,29 @@ public class App {
 				System.out.print("검색할 학생 이름 입력 >>> ");
 				String searchStudentName = sc.nextLine();
 				System.out.println("--------------------");
+				char[] tempSearchName = searchStudentName.toCharArray();
 				
 				int searchCnt = 0;
+				int charCnt = 0;
 				for(int i = 0; i < cnt; i++) {
 					//Q.contains 사용하지 말고 알고리즘으로 변경
-					if(nameList[i].contains(searchStudentName)) {					
+					for(int j = 0; j < searchStudentName.length(); j++ ) {
+						char temp = nameList[i].charAt(j); 
+						if(charCnt == 3) {
+							break;
+						}else if(temp == tempSearchName[j]) {					
+							charCnt++;
+						}
+						
+					}
+					if(charCnt >= 3) {
 						System.out.println("학생이름 : " + nameList[i]);
 						System.out.println("학생나이 : " + ageList[i]);
 						System.out.println("학생점수 : " + scoreList[i]);
 						System.out.println("--------------------");
 						searchCnt ++;
 					}
+					charCnt = 0;
 				}
 				
 				if(searchCnt == 0 ) {
@@ -228,22 +269,91 @@ public class App {
 				System.out.print("삭제할 학생 이름 입력 >>> ");
 				String deleteStudentName = sc.nextLine();
 				int deleteCnt = 0;
+				int dcount = 0;
+				int[] tempindex = new int[cnt];
+				
+				System.out.println("--------------------");
 				for(int i = 0; i < cnt; i++) {
 					if(nameList[i].equals(deleteStudentName)) {
-						//Q. 해당 학생이 확인되었습니다. 이 학생을 삭제 하겠습니까?(Y/n)
-						//Q. 중복 값 있는경우 리스트 출력 후 1번 학생 삭제 2번학생 삭제 번호로 삭제
-						for(int j = i; j < cnt-1; j++) {
-							nameList[j] = nameList[j+1];
-							ageList[j] = ageList[j+1];
-							scoreList[j] = scoreList[j+1];
-						}
-						cnt--;
-						i--;
-						deleteCnt++;
+						tempindex[dcount] = indexList[i];
+						dcount++;
+						System.out.println("번호 : " + dcount);
+						System.out.println("학생이름 : " + nameList[i]);
+						System.out.println("학생나이 : " + ageList[i]);
+						System.out.println("학생점수 : " + scoreList[i]);
+						System.out.println("--------------------");
 					}
 				}
-				System.out.println("학생 "+deleteCnt + "명이 삭제 되었습니다.");
-				System.out.println("학생 정보 삭제 완료.");
+				
+				if(dcount > 1) {
+					
+					while(true) {
+						System.out.println("중복된 학생이 확인되었습니다. 학생을 확인하시고 삭제하려는 학생 번호를 하시고 ");
+						System.out.print("돌아가시려면 n을 입력해주세요. >>> ");
+						String yn = sc.nextLine();
+						
+						if(yn.equals("n") || yn.equals("N")) {
+							System.out.println("학생 삭제를 취소 합니다.");
+							break;
+						}else{
+							int num = Integer.parseInt(yn);
+							for(int i = 0; i < cnt; i++) {
+								if(tempindex[num-1] == indexList[i] && 
+										deleteStudentName.equals(nameList[i])) {
+									for(int j = i; j < cnt-1; j++) {
+										nameList[j] = nameList[j+1];
+										ageList[j] = ageList[j+1];
+										scoreList[j] = scoreList[j+1];
+									}
+									indexList[cnt-1] = 0;
+									cnt--;
+									deleteCnt++;
+								}
+							}
+						}
+						if(deleteCnt > 0) {
+							System.out.println("학생 "+deleteStudentName+ " 정보 삭제 완료.");
+							break;
+						}else {
+							System.out.println("삭제에 실패하였습니다. 다시시도해주세요 ");
+							break;
+						}
+						
+					}
+				}else if(dcount == 1) {
+					while(true) {
+						System.out.println("해당 학생이 확인되었습니다. 이 학생을 삭제 하겠습니까?(Y/n)");					
+						String deleteYn = sc.nextLine();
+						if(deleteYn.equals("y") || deleteYn.equals("Y")) {
+							
+							//Q. 해당 학생이 확인되었습니다. 이 학생을 삭제 하겠습니까?(Y/n)
+							//Q. 중복 값 있는경우 리스트 출력 후 1번 학생 삭제 2번학생 삭제 번호로 삭제
+							for(int i = 0; i < cnt; i++) {
+								if(nameList[i].equals(deleteStudentName)) {
+									for(int j = i; j < cnt-1; j++) {
+										nameList[j] = nameList[j+1];
+										ageList[j] = ageList[j+1];
+										scoreList[j] = scoreList[j+1];
+									}
+									cnt--;
+									i--;
+									deleteCnt++;
+								}
+							}
+							System.out.println("학생 "+deleteCnt + "명이 삭제 되었습니다.");
+							System.out.println("학생 정보 삭제 완료.");
+							break;
+							
+						}else if(deleteYn.equals("n") || deleteYn.equals("N")){
+							System.out.println("학생 삭제를 취소 합니다.");
+							break;
+							
+						}else {
+							System.out.println("잘못된 입력입니다. 다시 시도해주세요.");
+						}
+					}
+				
+				}
 				
 			}else if(command.equals("5")) {
 				System.out.println("[학생 통계 검색 시작]");
@@ -254,7 +364,7 @@ public class App {
 				}
 				// 평균 계산
 				// Q. 소수점 2자리 까지만 나오게 
-				double average = ((double)sum / cnt);
+				double average = Math.round(((double)sum/cnt)*100)/100.0;
 				
 			
 				System.out.println("--------------------");
