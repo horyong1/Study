@@ -7,15 +7,29 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc =  new Scanner(System.in);
-		
+		Scanner sc = new Scanner(System.in);
+
 		// 시간 입력
-		int A = 0;		// Takahashi 시간
-		int B = 0;		// Takahashi 분
-		int C = 0;		// Aoki 시간
-		int D = 0;		// Aoki 분
+		int A = sc.nextInt(); // Takahashi 시간
+		int B = sc.nextInt(); // Takahashi 분
+		int C = sc.nextInt(); // Aoki 시간
+		int D = sc.nextInt(); // Aoki 분
+		sc.close();
 		
-		
+		if (A < C) {
+			System.out.println("Takahashi");
+		} else if (A > C) {
+			System.out.println("Aoki");
+		} else {
+			if (B < D) {
+				System.out.println("Takahashi");
+			} else if (B > D) {
+				System.out.println("Aoki");
+			} else {
+				System.out.println("Takahashi");
+			}
+		}
+
 	}
 
 }
