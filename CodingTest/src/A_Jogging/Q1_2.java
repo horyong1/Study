@@ -1,4 +1,4 @@
-package Jogging;
+package A_Jogging;
 import java.util.Scanner;
 
 public class Q1_2 {

@@ -1,4 +1,4 @@
-package GoodMorning;
+package A_GoodMorning;
 
 import java.util.Scanner;
 

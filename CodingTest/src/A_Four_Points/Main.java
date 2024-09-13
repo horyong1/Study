@@ -1,4 +1,4 @@
-package Four_Points;
+package A_Four_Points;
 
 import java.util.Scanner;
 

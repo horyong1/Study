@@ -1,4 +1,4 @@
-package Move_Right;
+package A_Move_Right;
 
 import java.util.Scanner;
 

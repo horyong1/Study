@@ -1,4 +1,4 @@
-package Lacked_Numbe;
+package A_Lacked_Numbe;
 
 import java.util.Scanner;
 
