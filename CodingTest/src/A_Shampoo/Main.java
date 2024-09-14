@@ -1,4 +1,4 @@
-package Shampoo;
+package A_Shampoo;
 
 import java.util.Scanner;
 
