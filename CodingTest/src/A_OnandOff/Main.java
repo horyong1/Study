@@ -1,3 +1,5 @@
+package A_OnandOff;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,6 +10,7 @@ public class Main {
         int S = sc.nextInt();
         int T = sc.nextInt();
         int X = sc.nextInt();
+        sc.close();
 
         if((S <= X && T > X && S < T) || (S > T && (X >=S || T > X))) {
             System.out.println("Yes");
