@@ -10,6 +10,7 @@ public class Main {
 		long A = sc.nextLong();
 		long B = sc.nextLong();
 		long K = sc.nextLong();
+		sc.close();
 		
 		long sum = 0L;
 		int cnt = 0;

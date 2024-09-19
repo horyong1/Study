@@ -10,6 +10,7 @@ public class Main {
 		int B = sc.nextInt(); // 랜덤 메달 하한선
 		int C = sc.nextInt();	// 랜덤 메달 받는 사람 수
 		int X = sc.nextInt();	// Iroha-chan 등수 
+		sc.close();
 		
 		if(X <= A) {
 			System.out.printf("%.12f",1.000000000000);
