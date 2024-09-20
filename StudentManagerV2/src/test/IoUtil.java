@@ -17,6 +17,5 @@ public class IoUtil {
 	public static void pause(){
 		System.out.println("계속 하시려면 enter를 입력하세요.");
 		sc.nextLine();
-		sc.nextLine();
 	}
 }

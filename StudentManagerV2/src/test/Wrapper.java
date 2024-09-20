@@ -1,6 +1,7 @@
 package test;
 
 public class Wrapper {
+	private Service service = new Service();
 	
 	public void run() {
 		hello();
@@ -15,16 +16,28 @@ public class Wrapper {
 			
 			switch(key) {
 				case "1":
+					service.addStudent();
+					IoUtil.pause();
 					break;
 				case "2":
+					service.showStudentList();
+					IoUtil.pause();
 					break;
 				case "3":
+					String searchName = IoUtil.input("검색 학생 이름 입력");
+					service.seachStudent(searchName);
+					IoUtil.pause();
 					break;
 				case "4":
+					String deleteName = IoUtil.input("검색 학생 이름 입력");
+					service.removeStudent(deleteName);
+					IoUtil.pause();
 					break;
 				case "5":
 					break;
 				default:
+					IoUtil.print("잘못된 입력입니다. 다시 입력 해 주세요");
+					IoUtil.pause();
 					break;
 			}
 		}
@@ -39,7 +52,7 @@ public class Wrapper {
 	}
 	
 	public void bye() {
-		System.out.println("프로그램을 종료합니다. 감사합니다.");
+		IoUtil.print("프로그램을 종료합니다. 감사합니다.");
 	}
 	
 	public void showCommandMenu() {
