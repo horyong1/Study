@@ -37,6 +37,7 @@ public class App {
 		String qqq = new String("ada");
 		
 		System.out.println(qqq);
+		System.out.println(qwer);
 		
 		
 	}

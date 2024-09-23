@@ -39,4 +39,41 @@ public class StudentDto {
 		return result;
 	}
 	
+	public void test4() {
+		int cnt = 0;
+		System.out.println("test4....." + age);
+		age++;
+		if(age > 100) {
+			return;
+		}
+		test4();
+		cnt++;
+		System.out.println("test4....last" + cnt);
+	}
+	
+	// setter, getter - 문법적으로는 메소드인데 개념적으로는 기능은 아니다
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+	
 }

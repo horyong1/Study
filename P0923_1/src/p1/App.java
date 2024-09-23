@@ -17,5 +17,7 @@ public class App {
 		int a = st1.test3();
 		
 		int studentCount = 0;
+		
+		st1.test4();
 	}
 }
