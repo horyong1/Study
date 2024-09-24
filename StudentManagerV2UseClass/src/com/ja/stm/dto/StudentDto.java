@@ -1,5 +1,10 @@
 package com.ja.stm.dto;
 
+
+/**
+ * Dto = Data Transfer Object : 데이터 형태 정의 클래스
+ * 필드만 중요
+ * */
 public class StudentDto {
 	private String name;
 	private int age;
