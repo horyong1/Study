@@ -26,32 +26,9 @@ public class Controller {
 				break;
 			}
 			
-			switch(commend) {
-			case "1":
-				service.registerStudent();
-				IoUtil.pause();
-				break;
-			case "2":
-				service.showStudentList();
-				IoUtil.pause();
-				break;
-			case "3":
-				service.searchStudent();
-				IoUtil.pause();
-				break;
-			case "4":
-				service.removeStudent();
-				IoUtil.pause();
-				break;
-			case "5":service.statistic();
-				IoUtil.pause();
-				break;
-			default:
-				IoUtil.print("잘못 입력 하셨습니다. 다시 입력해주세요.....");
-				IoUtil.pause();
-				break;
-			}
+			branchFlowByCommend(commend);
 		}
+		
 	}
 	
 	// SRP = 단일 책임 원칙
@@ -79,6 +56,33 @@ public class Controller {
 		
 	}
 	
+	public void branchFlowByCommend(String commend) {
+		switch(commend) {
+		case "1":
+			service.registerStudent();
+			IoUtil.pause();
+			break;
+		case "2":
+			service.showStudentList();
+			IoUtil.pause();
+			break;
+		case "3":
+			service.searchStudent();
+			IoUtil.pause();
+			break;
+		case "4":
+			service.removeStudent();
+			IoUtil.pause();
+			break;
+		case "5":service.statistic();
+			IoUtil.pause();
+			break;
+		default:
+			IoUtil.print("잘못 입력 하셨습니다. 다시 입력해주세요.....");
+			IoUtil.pause();
+			break;
+		}
+	}
 	
 	private String selectCommand() {
 		String key = IoUtil.input("커맨드 입력 >>>> ");
