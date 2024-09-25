@@ -82,8 +82,10 @@ public class Service {
 		}
 		
 		double avg = (sum/(double)studentList.length);
-		IoUtil.print("총 인원 : "+ studentList.length+", 평균 : " + avg);
-		
+		IoUtil.print("==============================");
+		IoUtil.print("총 인원	: " + studentList.length);
+		IoUtil.print("평균	: " + avg);
+		IoUtil.print("==============================");
 	}
 	
 	/**
@@ -100,9 +102,9 @@ public class Service {
 			if(student == null || student.getName() == null) {
 				continue;
 			}
-			IoUtil.print("학생 이름 : " + student.getName());
-			IoUtil.print("학생 나이 : " + String.valueOf(student.getAge()));
-			IoUtil.print("학생 점수 : " + String.valueOf(student.getScore()));
+			IoUtil.print("학생 이름	 : " + student.getName());
+			IoUtil.print("학생 나이	 : " + String.valueOf(student.getAge()));
+			IoUtil.print("학생 점수	 : " + String.valueOf(student.getScore()));
 			IoUtil.print("==============================");;
 		}
 	}

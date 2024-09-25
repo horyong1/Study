@@ -22,12 +22,12 @@ public class Controller {
 			
 			
 			if(isExitCode(commend)) {
-				bye();
 				break;
 			}
 			
 			branchFlowByCommend(commend);
 		}
+		bye();
 		
 	}
 	
