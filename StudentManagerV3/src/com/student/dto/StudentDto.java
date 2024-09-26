@@ -5,6 +5,16 @@ public class StudentDto {
 	private int age;
 	private int score;
 	
+	public StudentDto() {
+		
+	}
+	
+	public StudentDto(String name, int age, int score) {
+		this.name = name;
+		this.age = age;
+		this.score = score;
+	}
+	
 	/**
 	 * @return the name
 	 */
