@@ -1,6 +1,7 @@
 package polymorpism;
 
 public class LgTv implements Tv{
+	private Speaker speaker;
 	
 	public void powerOn() {
 		System.out.println("LG TV - 전원이 켜집니다.");
@@ -11,10 +12,20 @@ public class LgTv implements Tv{
 	}
 	
 	public void volumeUp() {
-		System.out.println("LG TV - 소리를 올립니다.");
+		speaker.volumeUp();
 	}
 	
 	public void volumeDown() {
-		System.out.println("LG TV - 소리를 내립니다.");
+		speaker.volumeDown();
 	}
+	
+	/**
+	 * @param speaker the speaker to set
+	 * setter, DI 가능하게
+	 */
+	public void setSpeaker(Speaker speaker) {
+		this.speaker = speaker;
+	}
+	
+	
 }
