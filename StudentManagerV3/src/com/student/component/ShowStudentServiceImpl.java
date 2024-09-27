@@ -18,8 +18,12 @@ public class ShowStudentServiceImpl implements Service {
 			IoUtil.print("학생이 없습니다.");
 			return;
 		}
-		IoUtil.print("=========================");
+		studentListPrint(dtos);
 		
+	}
+	
+	private void studentListPrint(StudentDto[] dtos) {
+		IoUtil.print("=========================");
 		for(StudentDto s : dtos) {
 			if( s == null || s.getName() == null) {
 				break;
