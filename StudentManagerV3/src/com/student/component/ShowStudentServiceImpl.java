@@ -22,6 +22,9 @@ public class ShowStudentServiceImpl implements Service {
 		
 	}
 	
+	/**
+	 * 학생 정보 출력
+	 * */
 	private void studentListPrint(StudentDto[] dtos) {
 		IoUtil.print("=========================");
 		for(StudentDto s : dtos) {

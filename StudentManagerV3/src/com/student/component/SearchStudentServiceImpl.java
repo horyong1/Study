@@ -26,6 +26,9 @@ public class SearchStudentServiceImpl implements Service {
 		searchStudentListPrint(dtos);
 	}
 	
+	/**
+	 * 학생 정보 출력
+	 * */
 	private void searchStudentListPrint(StudentDto[] dtos) {
 		IoUtil.print("=========================");
 		for(StudentDto s : dtos) {
