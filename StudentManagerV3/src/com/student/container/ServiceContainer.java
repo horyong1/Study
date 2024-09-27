@@ -16,7 +16,7 @@ public class ServiceContainer {
 	private Repository repository = new Repository();
 	
 	public ServiceContainer() {
-		// 생성자 생성
+		// 인스턴스 생성
 		AddStudentServiceImpl addStudentServiceImpl = new AddStudentServiceImpl();
 		ShowStudentServiceImpl showStudentServiceImpl = new ShowStudentServiceImpl();
 		SearchStudentServiceImpl searchStudentServiceImpl = new SearchStudentServiceImpl();
@@ -30,7 +30,7 @@ public class ServiceContainer {
 		removeStudentServiceImpl.setRepository(repository);
 		scoreAvgStudentServiceImpl.setRepository(repository);
 		
-		// HashMap에 Key, value 값 넣기 
+		// HashMap에 Key, value 값 넣기
 		services.put("1", addStudentServiceImpl);
 		services.put("2", showStudentServiceImpl);
 		services.put("3", searchStudentServiceImpl);
