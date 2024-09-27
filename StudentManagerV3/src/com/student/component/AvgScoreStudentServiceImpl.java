@@ -15,12 +15,15 @@ public class AvgScoreStudentServiceImpl implements Service {
 	@Override
 	public void process() {
 		IoUtil.print("=====[학생 통계]=====");
-		
 		double avg = repository.statistic();
+		avgPrint(avg);
 		
+	}
+	
+	private void avgPrint(double avg) {
 		IoUtil.print("==============================");
 		IoUtil.print("총 인원	: " + repository.getCount());
-		IoUtil.print("평균	: " + Math.round(avg*100)/100.0);
+		IoUtil.print("평균	: " + Math.round(avg*100)/(double)100);
 		IoUtil.print("==============================");
 	}
 	
