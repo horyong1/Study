@@ -10,9 +10,9 @@ public class AddStudentServiceImpl implements Service{
 	public void setRepository(Repository repository) {
 		this.repository = repository;
 	}
+	
 	@Override
 	public void process() {
-		
 		IoUtil.print("====[학생 등록 시작]=====");
 		
 		StudentDto dto = inputStudentInfo();
@@ -26,6 +26,7 @@ public class AddStudentServiceImpl implements Service{
 		resultPrint();
 		
 	}
+	
 	/**
 	 * 학생 정보 입력
 	 * */
