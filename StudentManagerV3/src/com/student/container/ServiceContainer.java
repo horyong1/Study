@@ -22,12 +22,14 @@ public class ServiceContainer {
 		SearchStudentServiceImpl searchStudentServiceImpl = new SearchStudentServiceImpl();
 		RemoveStudentServiceImpl removeStudentServiceImpl = new RemoveStudentServiceImpl();
 		ScoreAvgStudentServiceImpl scoreAvgStudentServiceImpl = new ScoreAvgStudentServiceImpl();
+		
 		// 리포지토리 셋팅
 		addStudentServiceImpl.setRepository(repository);
 		showStudentServiceImpl.setRepository(repository);
 		searchStudentServiceImpl.setRepository(repository);
 		removeStudentServiceImpl.setRepository(repository);
 		scoreAvgStudentServiceImpl.setRepository(repository);
+		
 		// HashMap에 Key, value 값 넣기 
 		services.put("1", addStudentServiceImpl);
 		services.put("2", showStudentServiceImpl);
@@ -35,6 +37,7 @@ public class ServiceContainer {
 		services.put("4", removeStudentServiceImpl);
 		services.put("5", scoreAvgStudentServiceImpl);
 	}
+	
 	// HashMap에 있는 키값 찾기 없으면 null 반환
 	public Service get(String serviceName) {
 		return services.get(serviceName);

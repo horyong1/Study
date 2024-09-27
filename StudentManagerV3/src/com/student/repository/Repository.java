@@ -28,23 +28,56 @@ public class Repository {
 	}
 	
 	public StudentDto[] findByName(String name) {
-		int cnt = 0;
+		int searchCount = 0;
 		for(int i = 0; i < count; i++) {
 			if(studentList[i].getName().contains(name)) {
-				cnt++;
+				searchCount++;
 			}
 		}
 
-		StudentDto[] tempList = new StudentDto[cnt];
+		StudentDto[] searchList = new StudentDto[searchCount];
 		int index = 0;
 		for(int i = 0; i < count; i++) {
 			if(studentList[i].getName().contains(name)) {
-				tempList[index] = studentList[i];
+				searchList[index] = studentList[i];
+				index++;
 			}
 		}
 		
-		return tempList;
+		return searchList;
 	}
+	
+	/**
+	 * 학생 선택 삭제 
+	 * */
+	public int removeByName(String name) {
+		int removeCount = 0;
+		for(int i = 0; i < count; i++) {
+			if(studentList[i].getName().equals(name)) {
+				for(int j = i; j < count-1; j++) {
+					studentList[j] = studentList[j+1]; 
+				}				
+				countMius();
+				i--;
+				removeCount++;
+			}
+		}
+		return removeCount;
+	}
+	
+	/**
+	 * 학생 평균 점수
+	 * */
+	public double statistic() {
+		int sum = 0;
+		for(int i = 0; i < count; i++) {
+			sum += studentList[i].getScore();
+		}
+		double result = (double)sum/count;
+		return result;
+	}
+
+	
 	private void countPlus() {
 		count++;
 	}

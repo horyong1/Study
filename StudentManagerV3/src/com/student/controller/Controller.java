@@ -5,7 +5,7 @@ import com.student.component.Service;
 import com.student.container.ServiceContainer;
 
 public class Controller {
-	ServiceContainer serviceContainer = new ServiceContainer();
+	private ServiceContainer serviceContainer = new ServiceContainer();
 	
 	public void run() {
 		hello();

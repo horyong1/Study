@@ -36,11 +36,11 @@ public class AddStudentServiceImpl implements Service{
 	}
 	
 	private void testData() {
-		String[] names = {"홍길동","김철수","이훈이","신짱구","홍길동"};
-		int[] ages = {10,20,30,40,50};
-		int[] scores = {10,20,30,40,50};
+		String[] names = {"홍길동","김철수","이훈이","신짱구","홍길동","김미영","최팀장"};
+		int[] ages = {13,27,35,45,53,45,45};
+		int[] scores = {53,47,73,34,53,67,87};
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < names.length; i++) {
 			StudentDto studentdtos = new StudentDto(names[i], ages[i], scores[i]);
 			repository.add(studentdtos);
 		}
