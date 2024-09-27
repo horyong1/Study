@@ -4,7 +4,7 @@ import com.student.Ioutil.IoUtil;
 import com.student.dto.StudentDto;
 import com.student.repository.Repository;
 
-public class ScoreAvgStudentServiceImpl implements Service {
+public class AvgScoreStudentServiceImpl implements Service {
 	
 	private Repository repository;
 	

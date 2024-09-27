@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.student.component.AddStudentServiceImpl;
 import com.student.component.RemoveStudentServiceImpl;
-import com.student.component.ScoreAvgStudentServiceImpl;
+import com.student.component.AvgScoreStudentServiceImpl;
 import com.student.component.SearchStudentServiceImpl;
 import com.student.component.Service;
 import com.student.component.ShowStudentServiceImpl;
@@ -21,7 +21,7 @@ public class ServiceContainer {
 		ShowStudentServiceImpl showStudentServiceImpl = new ShowStudentServiceImpl();
 		SearchStudentServiceImpl searchStudentServiceImpl = new SearchStudentServiceImpl();
 		RemoveStudentServiceImpl removeStudentServiceImpl = new RemoveStudentServiceImpl();
-		ScoreAvgStudentServiceImpl scoreAvgStudentServiceImpl = new ScoreAvgStudentServiceImpl();
+		AvgScoreStudentServiceImpl scoreAvgStudentServiceImpl = new AvgScoreStudentServiceImpl();
 		
 		// 리포지토리 셋팅
 		addStudentServiceImpl.setRepository(repository);
