@@ -1,4 +1,4 @@
-package programmers.basic.홀짝에_따라_다른값_반환하기;
+package programmers.level0.공배수;
 
 public class Main {
 

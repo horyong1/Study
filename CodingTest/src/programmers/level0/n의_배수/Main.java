@@ -1,4 +1,4 @@
-package programmers.basic.n의_배수;
+package programmers.level0.n의_배수;
 
 public class Main {
 	public static void main(String[] args) {

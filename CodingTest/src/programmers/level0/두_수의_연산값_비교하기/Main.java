@@ -1,4 +1,4 @@
-package programmers.basic.두_수의_연산값_비교하기;
+package programmers.level0.두_수의_연산값_비교하기;
 
 public class Main {
 	public static void main(String[] args) {

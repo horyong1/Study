@@ -1,4 +1,4 @@
-package programmers.basic.문자열_섞기;
+package programmers.level0.문자열_섞기;
 
 public class Main {
 

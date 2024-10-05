@@ -1,4 +1,4 @@
-package programmers.basic.종이자르기;
+package programmers.level0.종이자르기;
 
 public class Main {
 	public static void main(String[] args) {

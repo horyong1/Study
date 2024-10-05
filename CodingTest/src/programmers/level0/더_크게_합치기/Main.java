@@ -1,4 +1,4 @@
-package programmers.basic.더_크게_합치기;
+package programmers.level0.더_크게_합치기;
 
 public class Main {
 	public static void main(String[] args) {

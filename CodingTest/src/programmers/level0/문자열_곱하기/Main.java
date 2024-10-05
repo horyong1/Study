@@ -1,4 +1,4 @@
-package programmers.basic.문자열_곱하기;
+package programmers.level0.문자열_곱하기;
 
 public class Main {
 	public static void main(String[] args) {

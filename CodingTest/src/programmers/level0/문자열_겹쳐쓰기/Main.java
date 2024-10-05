@@ -1,4 +1,4 @@
-package programmers.basic.문자열_겹쳐쓰기;
+package programmers.level0.문자열_겹쳐쓰기;
 
 public class Main {
 
