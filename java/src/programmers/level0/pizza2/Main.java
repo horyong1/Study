@@ -1,7 +1,5 @@
 package programmers.level0.pizza2;
 
-import java.nio.channels.Pipe;
-
 public class Main {
     public static void main(String[] args) {
         /**
