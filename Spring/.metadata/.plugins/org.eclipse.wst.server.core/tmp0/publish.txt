@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Aug 29 17:12:25 KST 2022
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Administrator.User\ -2022MQTFD\\.m2\\repository\\org\\springframework\\spring-web\\5.0.7.RELEASE\\spring-web-5.0.7.RELEASE.jar=E\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\ex02\\WEB-INF\\lib\\spring-web-5.0.7.RELEASE.jar
+org.eclipse.jst.jee.server\:ex02=E\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\ex02
