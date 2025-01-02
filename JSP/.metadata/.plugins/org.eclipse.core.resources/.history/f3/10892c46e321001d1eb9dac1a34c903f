@@ -1,0 +1,22 @@
+<%@ page import="java.io.BufferedReader"%>
+<%@ page import="java.io.FileReader"%>
+<%@ page import="java.util.HashMap"%>
+<%@ page import="java.util.Map"%>
+<%@ page import="smtp.NaverSMTP"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+Map<String, String> emailInfo = new HashMap<String, String>();
+emailInfo.put("from", request.getParameter("from"))
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+</body>
+</html>

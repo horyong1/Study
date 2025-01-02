@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;MustHaveJSP&apos;&#x0D;&#x0A;- Original project: &apos;MustHaveJSP&apos;&#x0D;&#x0A;- Original element: &apos;websocket.ChatServer.java&apos;" description="Delete element" element1="/src\/main\/java&lt;websocket{ChatServer.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1661130537388" subPackages="false" version="1.0"/>
+</session>

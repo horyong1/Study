@@ -1,0 +1,38 @@
+package test1291;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n1,n2,n3;
+		
+		while(true) {
+			n1=sc.nextInt();
+			n2=sc.nextInt();
+			n3 = n1-n2;
+			if((n1<2||n1>9) || (n2<2||n2>9) || (n3<0)) {
+				System.out.println("INPUT ERROR!");
+			}else {
+				sc.close();
+				break;
+			}
+		}
+		
+		
+		for(int i = 1; i<=9; i++) {
+			for(int j = n1; j>=n2; j--) {
+				System.out.printf("%d * %d = %2d   ",j,i,j*i);
+				
+//				System.out.printf("%d * %d = %2d",n2,i,n2*i);
+			}
+			System.out.println();
+		}
+		
+		
+		
+	}
+
+}

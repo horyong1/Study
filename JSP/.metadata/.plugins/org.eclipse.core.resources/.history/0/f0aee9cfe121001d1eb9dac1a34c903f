@@ -1,0 +1,46 @@
+package smtp;
+
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.mail.MessagingException;
+import javax.mail.Session;
+
+public class NaverSMTP {
+	private final Properties serverInfo;	// 서버 정보
+	private final Authenticator auth;		// 인증 정보 
+	
+	public NaverSMTP() {
+		// 네이버 SMTP 서버 접속 정보
+		serverInfo = new Properties();
+		serverInfo.put("mail.smtp.host","smtp.naver.com");
+		serverInfo.put("mail.smtp.port","465");
+		serverInfo.put("mail.smtp.starttls.enable","true");
+		serverInfo.put("mail.smtp.auth","true");
+		serverInfo.put("mail.smtp.debug","true");
+		serverInfo.put("mail.smtp.socketFactory.port","465");
+		serverInfo.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSoketFactory");
+		serverInfo.put("mail.smtp.socketFactory.fallback","false");
+		
+		// 사용자 인증 정보
+		auth = new Authenticator() {
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("네이버 아이디","네이버 패스워드");
+			}
+		};
+		
+		
+	}
+	
+	// 주어진 메일 내용을 네이버 SMTP 서버를 통해 전송
+	public void emailSending(Map<String, String>mailInfo) 
+				throws MessagingException{
+		Session session = Session.getInstance(serverInfo,auth);
+		session.setDebug(true);
+		
+		
+	}
+}

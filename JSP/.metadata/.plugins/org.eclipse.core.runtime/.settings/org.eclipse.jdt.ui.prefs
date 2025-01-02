@@ -1,0 +1,10 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="model1.board.BoardDTO"><rhs name\="model1.board.BoardDTO"/></lhs><lhs name\="common.DBConnPool"><rhs name\="model2.mvcboard.MVCBoardDAO"/></lhs><lhs name\="model2.mvcboard.MVCBoardDAO"><rhs name\="model2.mvcboard.MVCBoardDAO"/></lhs><lhs name\="model2.mvcboard.MVCBoardDTO"><rhs name\="model2.mvcboard.MVCBoardDTO"/></lhs><lhs name\="javax.mail.Message$RecipientType"><rhs name\="javax.mail.Message$RecipientType"/></lhs></history>
+content_assist_number_of_computers=17
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

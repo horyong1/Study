@@ -1,0 +1,24 @@
+package test1152;
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		sc.close();
+		int cnt = 0;
+		String [] a = str.split(str);
+		
+		for(int i = 0; i<a.length; i++) {
+			System.out.println("a["+i+"] = " +a[i]);
+		}
+//		StringTokenizer st = new StringTokenizer(str, " ");
+//	
+//		System.out.println(st.countTokens());
+	}
+
+}

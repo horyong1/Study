@@ -1,0 +1,20 @@
+package smtp;
+
+import java.net.Authenticator;
+import java.util.Properties;
+
+public class NaverSMTP {
+	private final Properties serverInfo;
+	private final Authenticator auth;
+	
+	public NaverSMTP() {
+		serverInfo = new Properties();
+		serverInfo.put("mail.smtp.host","smtp.naver.com");
+		serverInfo.put("mail.smtp.port","465");
+		serverInfo.put("mail.smtp.starttls.enable","true");
+		serverInfo.put("mail.smtp.host","smtp.naver.com");
+		serverInfo.put("mail.smtp.host","smtp.naver.com");
+		serverInfo.put("mail.smtp.host","smtp.naver.com");
+		serverInfo.put("mail.smtp.host","smtp.naver.com");
+	}
+}
